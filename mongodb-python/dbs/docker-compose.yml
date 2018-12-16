@@ -1,0 +1,13 @@
+version: "3"
+services:
+    mongopy-mongo:
+        build: ./mongo
+        container_name: "mongopy-mongo"
+        ports:
+            - "27020:27017"
+        env_file:
+            - "./mongo/compose.env"
+        volumes:
+            - "$HOME/.local/mongopy-mongo:/data/db"
+        restart: "no"
+
